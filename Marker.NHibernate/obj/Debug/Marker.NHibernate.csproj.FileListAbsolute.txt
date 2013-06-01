@@ -1,0 +1,11 @@
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\bin\Debug\Marker.NHibernate.dll
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\bin\Debug\Marker.NHibernate.pdb
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\bin\Debug\Iesi.Collections.dll
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\bin\Debug\NHibernate.dll
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\bin\Debug\Shop.Domain.dll
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\bin\Debug\Shop.Domain.pdb
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\bin\Debug\Iesi.Collections.xml
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\bin\Debug\NHibernate.xml
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\obj\Debug\Marker.NHibernate.csprojResolveAssemblyReference.cache
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\obj\Debug\Marker.NHibernate.dll
+c:\users\max\documents\visual studio 2012\Projects\Shop\Marker.NHibernate\obj\Debug\Marker.NHibernate.pdb

@@ -1,0 +1,7 @@
+c:\users\max\documents\visual studio 2012\Projects\Shop\Shop.Domain\bin\Debug\Shop.Domain.dll
+c:\users\max\documents\visual studio 2012\Projects\Shop\Shop.Domain\bin\Debug\Shop.Domain.pdb
+c:\users\max\documents\visual studio 2012\Projects\Shop\Shop.Domain\obj\Debug\Shop.Domain.csprojResolveAssemblyReference.cache
+c:\users\max\documents\visual studio 2012\Projects\Shop\Shop.Domain\obj\Debug\Shop.Domain.dll
+c:\users\max\documents\visual studio 2012\Projects\Shop\Shop.Domain\obj\Debug\Shop.Domain.pdb
+C:\Users\Max\Documents\Visual Studio 2012\Projects\Shop\Shop.Domain\bin\Debug\Iesi.Collections.dll
+C:\Users\Max\Documents\Visual Studio 2012\Projects\Shop\Shop.Domain\bin\Debug\Iesi.Collections.xml

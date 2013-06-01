@@ -1,0 +1,33 @@
+﻿@model Shop.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Welcome to our scatehouse!";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="span4 offset4 well">
+            <legend>Please Sign In</legend>
+            @if (@ViewBag.Error != null)
+            {
+                <div class="alert alert-error">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    @ViewBag.Error
+                </div>
+            }
+
+            @using (Html.BeginForm())
+            {
+                @Html.TextBoxFor(x => x.Email, new { @class = "span4", placeholder = "Username" })
+                @Html.TextBoxFor(x => x.Password, new { @class = "span4", placeholder = "Password" })
+
+
+                <label class="checkbox">
+                    <input type="checkbox" name="remember" value="1">
+                    Remember Me
+                </label>
+                <button type="submit" class="btn btn-info btn-block">Sign in</button>
+            }
+        </div>
+    </div>
+</div>

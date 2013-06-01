@@ -1,0 +1,58 @@
+﻿@using Shop.Web.HtmlHelpers
+@model Shop.Domain.Models.User
+
+@{
+    ViewBag.Title = "Main page";
+}
+
+
+
+<div class="row">
+    <div class="span4">
+        @Html.Image(Model.Avatar.Name, 200, 400, Model.FirstName)</div>
+    <div class="span8">
+        <table class="table">
+            <tr>
+                <td>@Html.DisplayFor(x => x.Login)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayFor(x => x.Password)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayFor(x => x.Email)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayFor(x => x.FirstName)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(x => x.LastName)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(x => x.City)</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('#upload').ajaxUploadPrompt({
+            url: '/image/upload',
+            beforeSend: function () {
+                $('#promptzone').hide();
+            },
+            error: function () {
+            },
+            success: function (data) {
+            var html = '<img src="/images/' + data + '" width="100px">';
+                $('#result').append(html);
+                $('#promptzone, #result').show();
+            }
+        });
+    });
+</script>
+
+

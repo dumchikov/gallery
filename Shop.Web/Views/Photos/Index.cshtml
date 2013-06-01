@@ -1,0 +1,53 @@
+﻿@using Shop.Web.HtmlHelpers
+@model IList<Shop.Domain.Models.Image>
+
+@{
+    ViewBag.Title = "Photos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        $('.photoset-grid').photosetGrid({
+            gutter: '2px',
+            highresLinks: true,
+            rel: 'withhearts-gallery',
+            onComplete: function () {
+                $('.photoset-grid').attr('style', '');
+                $('.photoset-grid a').colorbox({
+                    photo: true,
+                    scalePhotos: true,
+                    maxHeight: '90%',
+                    maxWidth: '90%'
+                });
+            }
+        });
+    });
+</script>
+<div class="row">
+    <div class="span12 ">
+        <div class="photoset-grid" data-layout="32323232323232323232">
+            @foreach (var img in Model)
+            {
+                <img src="@("images/" + img.Name)"  data-highres="@("images/" + img.Name)"/>
+              // <a>@Html.Image(img.Name)</a>
+            }
+        </div>
+    </div>
+</div>
+@section menuItems{
+    @if (User.Identity.IsAuthenticated)
+    {
+        <button class="btn btn-primary" id="upload">Add new photo</button>
+        <script type="text/javascript">
+            $('#upload').ajaxUploadPrompt({
+                url: 'photos/add',
+                success: function () {
+                    window.location = '/';
+                }
+            });
+        </script>
+    }
+}
+
+
+

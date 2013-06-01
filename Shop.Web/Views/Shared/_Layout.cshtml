@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/css")
+    @Scripts.Render("~/scripts")
+    <link rel="shortcut icon" href="~/favicon.ico">
+</head>
+
+<body>
+   <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li><a href="/">My page</a></li>
+@*                    <li><a href="#">Friends</a></li>
+                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">Settings</a></li>*@
+                    @RenderSection("menuItems", required: false)
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/scripts/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

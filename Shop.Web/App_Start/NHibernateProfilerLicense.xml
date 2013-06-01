@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<license id="890783a0-9695-4e5e-80b5-0effa436b37d" expiration="2013-06-30T00:00:00.0000000" type="Trial" prof="nhprof" version="2" updatesExpiration="2014-May-29">
+  <name>maxmax</name>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <DigestValue>WUUKZ2Vmkr1cz8fif3DprELE/ss=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>OC3vFOzlujqpWnMLn07mwKutWfVa5UwdZGbxOgl0vh2I8EUoaxn/faJyl8zPBwiwq2H4Gubtdf6BO5gQR2KWSyw8Cc4+cv3EBYzMiLtXJLzXmtVb+IWXmq6AWljKo+yPSFjz+YNuqrbEpJ/J7hUTi3tawvbSUzFgUf7k2w3gPRE=</SignatureValue>
+  </Signature>
+</license>

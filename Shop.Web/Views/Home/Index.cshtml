@@ -1,0 +1,164 @@
+﻿@model IList<Shop.Domain.Models.User>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<script type="text/javascript">
+    var formatProductList = function (products, itemsInRow) {
+        var result = [];
+        for (var i = 0; i < products.length; i += itemsInRow) {
+            var row = [];
+            for (var j = 0; j < itemsInRow; ++j) {
+                if (products[i + j]) {
+                    row.push(products[i + j]);
+                }
+            }
+            result.push(row);
+        }
+        return result;
+    };
+
+    function ProductsViewModel(data) {
+        this.products = ko.observableArray(data);
+        this.productRows = ko.computed(function () {
+            var result = formatProductList(this.products(), 4);
+            return result;
+        }, this);
+
+        this.changePage = function (page) {
+            var self = this;
+            $('#load-gif').show();
+            $.getJSON('/Products/Products?page=' + page, function (dt) {
+                self.products(dt);
+                $('#load-gif').hide();
+            });
+        };
+    }
+
+    $(function () {
+        var pages = "@ViewBag.Pages";
+        $.getJSON('/Products/Products?page=1', function (data) {
+            var productsViewModel = new ProductsViewModel(data);
+            ko.applyBindings(productsViewModel);
+            var target = $('.pagination');
+            var options =
+            {
+                page: 1,
+                lastPage: pages,
+                click: function (i) {
+                    options.page = i;
+                    target.pagination(options);
+                    productsViewModel.changePage(i);
+                }
+            };
+            target.pagination(options);
+        });
+        
+        $('.carousel').carousel({
+            interval: 10000
+        });
+    });
+</script>
+
+<div class="row">
+<div class="span2">
+    <ul class="nav nav-pills nav-stacked">
+        <li><a href="#">Мужская одежда</a></li>
+        <li><a href="#">Женская одежда</a></li>
+        <li><a href="#">Распродажа одежды</a></li>
+        <li><a href="#">Детская одежда</a></li>
+                <li><a href="#">Мужская одежда</a></li>
+        <li><a href="#">Женская одежда</a></li>
+        <li><a href="#">Распродажа одежды</a></li>
+        <li><a href="#">Детская одежда</a></li>
+    </ul>
+</div>
+
+    <div class="span8">
+        <div class="row">
+            <form class="form-search" style="margin-top: 20px; float: right;">
+                <div class="input-append">
+                    <input type="text" class="input-xxlarge" placeholder="Search...">
+                    <div class="btn-group">
+                        <button class="btn dropdown-toggle" data-toggle="dropdown">
+                            Все категории
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            ...
+                        </ul>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Поиск</button>
+            </form>
+
+        </div>
+        <div class="row">
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img src="@Url.Content("~/Content/test/page3-img1.jpg")"/>
+                        <div class="carousel-caption">
+                            <p>Useful info</p>
+                        </div>
+
+                    </div>
+                    <div class="item">
+                        <img src="@Url.Content("~/Content/test/page4-img1.jpg")"/>   
+                        <div class="carousel-caption">
+                            <p>Useful info</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="@Url.Content("~/Content/test/page4-img2.jpg")"/>  
+                        <div class="carousel-caption">
+                            <p>Useful info</p>
+                        </div>
+                    </div>
+      
+                    <div class="item">
+                        <img src="@Url.Content("~/Content/test/page4-img3.jpg")"/>  
+                        <div class="carousel-caption">
+                            <p>Useful info</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
+        </div>
+    </div>
+     <div class="span2"></div>
+    </div>
+
+
+
+<ul data-bind="foreach: products" class="thumbnails">
+    <li class="span2">
+        <div class="thumbnail">
+            <img data-bind="attr: { src: ImageUrl }" alt="">
+            <a href="#" data-bind="text: Name" style="
+                                      color: #666;
+                                      font-weight: normal;
+                                      text-decoration: none;
+                                      font-family: Tahoma,Arial,sans-serif;
+                                      font-size: 1.1em;
+                                      line-height: 1.3em;"></a>
+            <label data-bind="text: '$ ' + Price"></label>
+        </div>
+    </li>
+</ul>
+
+
+
+
+
