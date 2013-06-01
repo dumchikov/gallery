@@ -32,7 +32,8 @@ namespace Shop.Core.NHibernate
                                                                                      x.Namespace != null &&
                                                                                      x.Namespace.Contains("Models"))
                                                                                  .UseOverridesFromAssembly(this.GetType().Assembly))
-                                                        .ExportTo(@"C:/mappings"))
+                                                        //.ExportTo(@"C:/mappings")
+                                                        )
 
                                         .BuildConfiguration();
 
