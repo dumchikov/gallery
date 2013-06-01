@@ -264,7 +264,6 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\plupload.full.js" />
-    <Content Include="Storage\Images\b32bc1ce-15e3-4abe-a6f2-0ded6b7c3215.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -290,6 +289,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Filters\" />
+    <Folder Include="Storage\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
